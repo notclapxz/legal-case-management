@@ -1,0 +1,5 @@
+{
+  "dev": "NODE_OPTIONS='--trace-warnings --inspect=0.0.0.0:9229' next dev",
+  "dev-safe": "NODE_OPTIONS='--max-old-space-size=4096 --trace-warnings' next dev --port 3001",
+  "dev-debug": "NODE_OPTIONS='--inspect-brk' next dev"
+}

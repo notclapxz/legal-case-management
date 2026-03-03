@@ -1,0 +1,126 @@
+{
+  "generated_at": "2026-01-19",
+  "database": "despacho-abogados",
+  "schema": "public",
+  "tables": {
+    "actividad_log": [
+      {"column_name": "id", "data_type": "uuid", "is_nullable": "NO", "column_default": "gen_random_uuid()"},
+      {"column_name": "usuario_id", "data_type": "uuid", "is_nullable": "YES", "column_default": null},
+      {"column_name": "accion", "data_type": "character varying", "is_nullable": "NO", "column_default": null, "character_maximum_length": 100},
+      {"column_name": "entidad", "data_type": "character varying", "is_nullable": "NO", "column_default": null, "character_maximum_length": 50},
+      {"column_name": "entidad_id", "data_type": "uuid", "is_nullable": "YES", "column_default": null},
+      {"column_name": "detalles", "data_type": "jsonb", "is_nullable": "YES", "column_default": null},
+      {"column_name": "created_at", "data_type": "timestamp with time zone", "is_nullable": "YES", "column_default": "now()"}
+    ],
+    "casos": [
+      {"column_name": "id", "data_type": "uuid", "is_nullable": "NO", "column_default": "uuid_generate_v4()"},
+      {"column_name": "codigo_estimado", "data_type": "text", "is_nullable": "NO", "column_default": null},
+      {"column_name": "cliente", "data_type": "text", "is_nullable": "NO", "column_default": null},
+      {"column_name": "descripcion", "data_type": "text", "is_nullable": "YES", "column_default": null},
+      {"column_name": "expediente", "data_type": "text", "is_nullable": "YES", "column_default": null},
+      {"column_name": "tipo", "data_type": "text", "is_nullable": "NO", "column_default": null},
+      {"column_name": "etapa", "data_type": "text", "is_nullable": "YES", "column_default": null},
+      {"column_name": "estado", "data_type": "text", "is_nullable": "NO", "column_default": "'Activo'::text"},
+      {"column_name": "forma_pago", "data_type": "text", "is_nullable": "YES", "column_default": null},
+      {"column_name": "monto_total", "data_type": "numeric", "is_nullable": "YES", "column_default": "0"},
+      {"column_name": "monto_cobrado", "data_type": "numeric", "is_nullable": "YES", "column_default": "0"},
+      {"column_name": "abogado_asignado_id", "data_type": "uuid", "is_nullable": "YES", "column_default": null},
+      {"column_name": "ubicacion_fisica", "data_type": "text", "is_nullable": "YES", "column_default": null},
+      {"column_name": "fecha_inicio", "data_type": "date", "is_nullable": "YES", "column_default": null},
+      {"column_name": "created_at", "data_type": "timestamp with time zone", "is_nullable": "YES", "column_default": "now()"},
+      {"column_name": "updated_at", "data_type": "timestamp with time zone", "is_nullable": "YES", "column_default": "now()"},
+      {"column_name": "created_by", "data_type": "uuid", "is_nullable": "YES", "column_default": null},
+      {"column_name": "monto_pendiente", "data_type": "numeric", "is_nullable": "YES", "column_default": null},
+      {"column_name": "estado_caso", "data_type": "character varying", "is_nullable": "YES", "column_default": "'En proceso'::character varying", "character_maximum_length": 50}
+    ],
+    "eventos": [
+      {"column_name": "id", "data_type": "uuid", "is_nullable": "NO", "column_default": "uuid_generate_v4()"},
+      {"column_name": "caso_id", "data_type": "uuid", "is_nullable": "NO", "column_default": null},
+      {"column_name": "tipo", "data_type": "text", "is_nullable": "NO", "column_default": null},
+      {"column_name": "titulo", "data_type": "text", "is_nullable": "NO", "column_default": null},
+      {"column_name": "descripcion", "data_type": "text", "is_nullable": "YES", "column_default": null},
+      {"column_name": "fecha_evento", "data_type": "timestamp with time zone", "is_nullable": "NO", "column_default": null},
+      {"column_name": "ubicacion", "data_type": "text", "is_nullable": "YES", "column_default": null},
+      {"column_name": "completado", "data_type": "boolean", "is_nullable": "YES", "column_default": "false"},
+      {"column_name": "alerta_7_dias", "data_type": "boolean", "is_nullable": "YES", "column_default": "true"},
+      {"column_name": "alerta_3_dias", "data_type": "boolean", "is_nullable": "YES", "column_default": "true"},
+      {"column_name": "alerta_1_dia", "data_type": "boolean", "is_nullable": "YES", "column_default": "true"},
+      {"column_name": "alerta_dia_evento", "data_type": "boolean", "is_nullable": "YES", "column_default": "true"},
+      {"column_name": "created_at", "data_type": "timestamp with time zone", "is_nullable": "YES", "column_default": "now()"},
+      {"column_name": "updated_at", "data_type": "timestamp with time zone", "is_nullable": "YES", "column_default": "now()"},
+      {"column_name": "created_by", "data_type": "uuid", "is_nullable": "YES", "column_default": null}
+    ],
+    "mensajes": [
+      {"column_name": "id", "data_type": "uuid", "is_nullable": "NO", "column_default": "gen_random_uuid()"},
+      {"column_name": "caso_id", "data_type": "uuid", "is_nullable": "YES", "column_default": null},
+      {"column_name": "remitente", "data_type": "character varying", "is_nullable": "NO", "column_default": null, "character_maximum_length": 255},
+      {"column_name": "asunto", "data_type": "character varying", "is_nullable": "NO", "column_default": null, "character_maximum_length": 500},
+      {"column_name": "mensaje", "data_type": "text", "is_nullable": "YES", "column_default": null},
+      {"column_name": "tipo", "data_type": "character varying", "is_nullable": "YES", "column_default": "'consulta'::character varying", "character_maximum_length": 50},
+      {"column_name": "leido", "data_type": "boolean", "is_nullable": "YES", "column_default": "false"},
+      {"column_name": "fecha_envio", "data_type": "timestamp with time zone", "is_nullable": "YES", "column_default": "now()"},
+      {"column_name": "created_at", "data_type": "timestamp with time zone", "is_nullable": "YES", "column_default": "now()"}
+    ],
+    "notas": [
+      {"column_name": "id", "data_type": "uuid", "is_nullable": "NO", "column_default": "uuid_generate_v4()"},
+      {"column_name": "caso_id", "data_type": "uuid", "is_nullable": "NO", "column_default": null},
+      {"column_name": "contenido", "data_type": "text", "is_nullable": "NO", "column_default": null},
+      {"column_name": "created_at", "data_type": "timestamp with time zone", "is_nullable": "YES", "column_default": "now()"},
+      {"column_name": "created_by", "data_type": "uuid", "is_nullable": "YES", "column_default": null},
+      {"column_name": "categoria", "data_type": "character varying", "is_nullable": "YES", "column_default": "'General'::character varying", "character_maximum_length": 50},
+      {"column_name": "prioridad", "data_type": "character varying", "is_nullable": "YES", "column_default": "'Media'::character varying", "character_maximum_length": 20},
+      {"column_name": "fecha_recordatorio", "data_type": "timestamp with time zone", "is_nullable": "YES", "column_default": null},
+      {"column_name": "completado", "data_type": "boolean", "is_nullable": "YES", "column_default": "false"},
+      {"column_name": "updated_at", "data_type": "timestamp with time zone", "is_nullable": "YES", "column_default": "now()"}
+    ],
+    "pagos": [
+      {"column_name": "id", "data_type": "uuid", "is_nullable": "NO", "column_default": "uuid_generate_v4()"},
+      {"column_name": "caso_id", "data_type": "uuid", "is_nullable": "NO", "column_default": null},
+      {"column_name": "monto", "data_type": "numeric", "is_nullable": "NO", "column_default": null},
+      {"column_name": "fecha_pago", "data_type": "date", "is_nullable": "NO", "column_default": null},
+      {"column_name": "concepto", "data_type": "text", "is_nullable": "YES", "column_default": null},
+      {"column_name": "metodo_pago", "data_type": "text", "is_nullable": "YES", "column_default": null},
+      {"column_name": "notas", "data_type": "text", "is_nullable": "YES", "column_default": null},
+      {"column_name": "created_at", "data_type": "timestamp with time zone", "is_nullable": "YES", "column_default": "now()"},
+      {"column_name": "created_by", "data_type": "uuid", "is_nullable": "YES", "column_default": null}
+    ],
+    "profiles": [
+      {"column_name": "id", "data_type": "uuid", "is_nullable": "NO", "column_default": null},
+      {"column_name": "username", "data_type": "text", "is_nullable": "NO", "column_default": null},
+      {"column_name": "nombre_completo", "data_type": "text", "is_nullable": "YES", "column_default": null},
+      {"column_name": "rol", "data_type": "text", "is_nullable": "NO", "column_default": null},
+      {"column_name": "activo", "data_type": "boolean", "is_nullable": "YES", "column_default": "true"},
+      {"column_name": "created_at", "data_type": "timestamp with time zone", "is_nullable": "YES", "column_default": "now()"},
+      {"column_name": "updated_at", "data_type": "timestamp with time zone", "is_nullable": "YES", "column_default": "now()"}
+    ],
+    "ubicaciones_fisicas": [
+      {"column_name": "id", "data_type": "uuid", "is_nullable": "NO", "column_default": "uuid_generate_v4()"},
+      {"column_name": "codigo_estimado", "data_type": "text", "is_nullable": "YES", "column_default": null},
+      {"column_name": "ubicacion", "data_type": "text", "is_nullable": "NO", "column_default": null},
+      {"column_name": "fila", "data_type": "integer", "is_nullable": "YES", "column_default": null},
+      {"column_name": "columna", "data_type": "text", "is_nullable": "YES", "column_default": null},
+      {"column_name": "seccion", "data_type": "text", "is_nullable": "YES", "column_default": null},
+      {"column_name": "posicion", "data_type": "integer", "is_nullable": "YES", "column_default": null},
+      {"column_name": "cliente", "data_type": "text", "is_nullable": "YES", "column_default": null},
+      {"column_name": "descripcion", "data_type": "text", "is_nullable": "YES", "column_default": null},
+      {"column_name": "expediente", "data_type": "text", "is_nullable": "YES", "column_default": null},
+      {"column_name": "tomo", "data_type": "text", "is_nullable": "YES", "column_default": null},
+      {"column_name": "created_at", "data_type": "timestamp with time zone", "is_nullable": "YES", "column_default": "now()"},
+      {"column_name": "updated_at", "data_type": "timestamp with time zone", "is_nullable": "YES", "column_default": "now()"}
+    ]
+  },
+  "views": {
+    "casos_completos": "Vista con información completa de casos incluyendo abogado y métricas",
+    "casos_con_ubicacion": "Vista con casos y su ubicación física",
+    "eventos_con_alertas": "Vista con eventos y nivel de alerta según días restantes",
+    "metricas_financieras": "Vista con métricas financieras del despacho"
+  },
+  "important_notes": [
+    "⚠️ CRÍTICO: La columna es 'abogado_asignado_id' NO 'abogada_asignada_id'",
+    "La tabla 'casos' tiene dos columnas de estado: 'estado' (Activo/Inactivo) y 'estado_caso' (En proceso/Ganado/Perdido)",
+    "Todas las tablas principales usan UUID v4 como ID",
+    "Los timestamps usan 'timestamp with time zone' por defecto con now()",
+    "Las columnas de tipo text permiten longitud ilimitada",
+    "character varying tiene límites específicos (ver character_maximum_length)"
+  ]
+}
