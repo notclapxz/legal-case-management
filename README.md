@@ -1,4 +1,4 @@
-# LexDesk - Legal Case Management System
+# Legal Case Management System
 
 A full-featured web application for law firms to manage cases, clients, documents, and schedules.
 
