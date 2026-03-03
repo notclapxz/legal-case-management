@@ -34,6 +34,25 @@ Thumbs.db
 # Testing
 coverage/
 
+# AI & Documentation files (not for public repo)
+.agents/
+.agents-old/
+AGENTS.md
+claude.md
+CHANGELOG.md
+DATABASE-SCHEMA.md
+ESTRUCTURA_FINAL.txt
+PROJECT_ORGANIZATION_COMPLETE.md
+REORGANIZACION-CARPETAS-COMPLETADA.md
+STATUS.md
+docs/
+sql-archives/
+supabase/
+fila*/
+fila*/
+armartio*.png
+casos_despacho.csv
+
 # Misc
 *.tmp
 *.temp
